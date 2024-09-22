@@ -1,18 +1,15 @@
-import './App.css';
-import { ChakraProvider } from '@chakra-ui/react';
-import Navmenu from './Navmenu';
-import About from './About';
+import { ChakraProvider, Container } from '@chakra-ui/react';
+import Header from './Header';
 
 function App() {
-  const title = 'Welcome to the new blog';
-  const likes = 50;
 
   return (
     <ChakraProvider>
       <div className="App">
-        <Navmenu />
+        <Container p={2}>
+          <Header />
+        </Container>
         <div className="content">
-          <About />
         </div>
       </div>
     </ChakraProvider>

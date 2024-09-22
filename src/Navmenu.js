@@ -8,14 +8,15 @@ import {
     MenuGroup,
     MenuOptionGroup,
     MenuDivider,
+    Box,
   } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 const Navmenu = () => {
     return (
         <Menu>
-            <MenuButton as={Button} leftIcon={<HamburgerIcon />}>
+            <MenuButton as={Button} colorScheme='red' leftIcon={<HamburgerIcon />}>
                 Sections
             </MenuButton>
             <MenuList>
