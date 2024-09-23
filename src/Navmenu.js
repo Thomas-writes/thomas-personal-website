@@ -1,4 +1,3 @@
-
 import {
     Menu,
     MenuButton,
@@ -13,16 +12,16 @@ import {
 import { Button } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-const Navmenu = () => {
+const Navmenu = ({ onSelectSection }) => {
     return (
         <Menu>
             <MenuButton as={Button} colorScheme='red' leftIcon={<HamburgerIcon />}>
                 Sections
             </MenuButton>
             <MenuList>
-                <MenuItem>About</MenuItem>
-                <MenuItem>Projects</MenuItem>
-                <MenuItem>Contact</MenuItem>
+                <MenuItem onClick={() => onSelectSection(0)}>About</MenuItem>
+                <MenuItem onClick={() => onSelectSection(1)}>Projects</MenuItem>
+                <MenuItem onClick={() => onSelectSection(2)}>Contact</MenuItem>
             </MenuList>
         </Menu>
       );
