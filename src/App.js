@@ -13,6 +13,7 @@ const RightsideContainer = React.forwardRef((props, ref) => (
 
 function App() {
     const sectionNames = ["About", "Projects", "Contact"];
+    const sectionColors = ["red.300", "teal.300", "green.200"];
     const information = [
         ["I am Thomas Savasten."],
         ["Website Portfolio"],
@@ -73,7 +74,7 @@ function App() {
                     <Header onSelectSection={onSelectSection} />
                 </Container>
                 <Flex height="80vh">
-                    <Leftside header={sectionNames[currentHeaderIndex]} />
+                    <Leftside header={sectionNames[currentHeaderIndex]} color={sectionColors[currentHeaderIndex]} />
                     <RightsideContainer ref={rightsideRef}>
                         {sectionNames.map((section, index) => (
                             <div key={index} ref={el => sectionRefs.current[index] = el} style={{ height: '80vh', padding: '20px', borderBottom: '1px solid #ccc', boxSizing: 'border-box' }}>

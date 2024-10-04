@@ -7,7 +7,10 @@ const Rightside = ({ items }) => {
             {items.length > 0 ? (
                 items.map((item, index) => (
                     <Text key={index} mb={2}>
-                        {item}
+                        {
+                        item === "Website Portfolio" ? 
+                        'Special Item: ' + item 
+                        : item}
                     </Text>
                 ))
             ) : (
