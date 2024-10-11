@@ -1,10 +1,20 @@
-import { Box, VStack, Text, Center} from "@chakra-ui/react";
+import { Box, VStack, Center, Image } from "@chakra-ui/react";
 
-const Leftside = ({ header, color}) => {
+const Leftside = ({ header, color, index }) => {
     return ( 
         <Box bg={color} height="80vh" width="50%"  p={4}>
-            <VStack spacing={100}>
+            <VStack spacing={1}>
                 <Center fontSize="50px">{header} </Center>
+                    {
+                    index === 0 ? 
+                    <Image src='https://attachments.office.net/owa/tsavasten%40ku.edu/service.svc/s/GetAttachmentThumbnail?id=AAMkADNhODcxNDBhLWFlNWMtNGQ1Zi1hNmI5LWFjNzVhNTZlYjQwNABGAAAAAAC39Cev8kO%2BTooeb4zWvZDCBwDR0%2BiBXz%2F3SIhM282ekC1aAAAAAAEKAADR0%2BiBXz%2F3SIhM282ekC1aAADhNNRfAAABEgAQAPNK8gP3vd1JrEaf%2Bj5UNoA%3D&thumbnailType=2&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im4rckg4a2dJRjhpSG1PNEhCVTZmOHpBQXA2WT0iLCJ4NXQiOiJuK3JIOGtnSUY4aUhtTzRIQlU2Zjh6QUFwNlk9Iiwibm9uY2UiOiJDaWhBWlozTDJraW9NSlpkN2x3NDNlUlFkUlNCWWZSclp3TnNKYURIT0FaVkRMSkNldDU3UGk2bHVPNEhxSEU2dmNNSTFqR2g2TzBtYlBTbTR2Mzk1RFIzcGZGMVhVQ2VyVzZpWm4tRnduSXVKZ1V5X0c2SGVvU2lCcmJQYXQyZlZNZmNaR3BlUU9UMUpiQXlZVkw0anpxM3EwbUJLalJ1ajc0S21TSG5ESlkiLCJpc3Nsb2MiOiJNV0hQUjAxMDFNQjI5NzYiLCJzcnNuIjo2Mzg2Mzc2NDkwNTQzOTMxNDF9.eyJzYXAtdmVyc2lvbiI6IjMxIiwiYXBwaWQiOiJhZjNlYmJiYS1jMjNmLTQ5MmEtYWE5My04MzQyMTY5NmVjNGIiLCJpc3NyaW5nIjoiV1ciLCJhcHBpZGFjciI6IjIiLCJhcHBfZGlzcGxheW5hbWUiOiIiLCJ1dGkiOiJlMTYyMTJlYy03YjZmLTQ0ODctOTRhZi1hMzY3ZDVjZDM4MDIiLCJpYXQiOjE3Mjg2NjAxOTgsInZlciI6IlNUSS5Vc2VyLkNhbGxiYWNrVG9rZW4uVjEiLCJ0aWQiOiIzYzE3NjUzNmFmZTY0M2Y1Yjk2NjM2ZmVhYmJlM2MxYSIsInRydXN0ZWRmb3JkZWxlZ2F0aW9uIjoiZmFsc2UiLCJ0b3BvbG9neSI6IntcIlR5cGVcIjpcIk1hY2hpbmVcIixcIlZhbHVlXCI6XCJNV0hQUjAxMDFNQjI5NzYucHJvZC5leGNoYW5nZWxhYnMuY29tXCJ9IiwicmVxdWVzdG9yX2FwcGlkIjoiMTU3Y2RmYmYtNzM5OC00YTU2LTk2YzMtZTkzZTlhYjMwOWI1IiwicmVxdWVzdG9yX2FwcF9kaXNwbGF5bmFtZSI6Ik9mZmljZSAzNjUgRXhjaGFuZ2UgTWljcm9zZXJ2aWNlIiwic2NwIjoiT3dhQXR0YWNobWVudHMuUmVhZCIsIm9pZCI6ImM1MzhjNDY3LWVhNTktNDU4OS05MTNlLWJlODkwMzg1ODU5NSIsInB1aWQiOiIxMDAzMjAwMzAyRTc1MThGIiwic210cCI6InRzYXZhc3RlbkBrdS5lZHUiLCJ1c2VyY2FsbGJhY2t1c2VyY29udGV4dGlkIjoiZWJkMGQ1OGNhOTIyNGQ3YjgxMWM0OTZmNDcyYWQ1ODkiLCJzaWduaW5fc3RhdGUiOiJrbXNpIiwiZXBrIjoie1wia3R5XCI6XCJSU0FcIixcIm5cIjpcInNVNmoycnRmQU85LXJtaWJpTkVENXFBeGZaYnhEV2NYSGhOUF96VmdyR251czIyUV9xU0VycHBnYkpRZ0ptY3JKemRpTmh6eHFuc0JyNW9CR2MxckdKM0d5VFo2cUVmY1NCd1NCMzBjeTdQYmhqaTlpVVNZcFFfUjQ2NnZUQXliOTNYSWNqQ2tLdVFtbTBWN1dfd0kyYVQzbi1HMTRJb0lGT080R0FtLVB0OUx2emVLUEhkU2ZXZ0RtQ0sybzdnbl9yLXdoZHhKM2VjOUwzalp4UW1yZUtSSmJKTll1N0VkSTkyMUtKalZra0E0TFNSaEZfNGt2eGdUZlNLQ1V2dzZYaUk3Y2pZUzBLUmswdkpmZDhkNlp6V0U4NEhVMnRlTlZSTFdZMC1RemNYMTk5THA3eXZFVUhpN0hWdXNLMm04bXhlVGl3b05IR3hVR2hsaUN1OGkyUVwiLFwiZVwiOlwiQVFBQlwiLFwiYWxnXCI6XCJSUzI1NlwiLFwiZXhwXCI6XCIxNzI4NzQ5NzI3XCIsXCJleHBfZGlmZlwiOlwiODY0MDBcIixcImtpZFwiOlwiblBkV29Hdllxd1JZaEotSUVWSmNpZlR0d0x3XCJ9LnBIS2RHS1hKNFhvcUhoY2E3T3ZmZitsOUphczRjcGlkWG9mdmQ5VVhxN3dSNkowYVJyZ0hlSEJqQWUyU1grVG5qQTYxS2R3YVBzSEgzK0V2OUJabmEvb3FvRndRam00MlBuL1QzOEZybUF6b0R4RVdaUlhzWG5qVVZxdnhrNTlneDlwSWdvZENBekh5eHgrbWhoOHNqK0lOVGl1dEgxVzFWUytkc0MxRHNOSk55RjNsdnRoVlBKeVplSUU3YzMxajN0eDZ1NkZITlRybmkvR0p6WmhJSnRBcklLc2twUHlMaXI4VmJtbUpWZEtscVVUeVBMd2o0cis0WDBzRlo2TFhaNkJDV09oTFpXRnd3Qk9MOWsyRzNpdVU0YjdzaXM5Q1dBR1JrWW1qOGhwWnBMNlZNeEZXMUx1YWRsUmExSE95Z0luUUV3UGNpUzRZNHZyUnppa2VTdz09IiwibmJmIjoxNzI4NjYwMTk4LCJleHAiOjE3Mjg2NjM3OTgsImlzcyI6Imh0dHBzOi8vc3Vic3RyYXRlLm9mZmljZS5jb20vc3RzLyIsImF1ZCI6Imh0dHBzOi8vb3V0bG9vay5vZmZpY2UuY29tIiwic3NlYyI6IkM1NVIvdDlPbEZOS2JtcTcifQ.nd4fCw7NikjEOWJzrvUn5lAEaaDajb8TnaH6eMs3jwG42HSb5EZXtBuUzhZvnQBcpANgqCOB74Swd20pgjOC_iL-kNPet0VayCm_GD36DE-_DBiVO2DAokvUlInEAaqdpNe4cYLCnR-qx76of6CN8DB5-ozxn2C2-vAfv3F46JFMeE_yPCHlxWRZu4niwg6tNGVUkUkfhXnFAQbHrW9r5QkYhJNdRpOsn9k7md_afAq4VkZG2c1aOUdWZfhq4eBA7kLfgt2m-Z7a44Lb27ZgWpWLrL6fo83mlcKtDSGfpskQ2qvLlqWDbry0BeW4ondu2vBDfmeyjQiSbYV2iLiSLg&X-OWA-CANARY=bdvoVwPpdokAAAAAAAAAAHB-wQ8N6twY-xpu4_TxCCqXZ0rYSRJ1ttV9aTuTn37pg0ohx8vVL90.&owa=outlook.office.com&scriptVer=20240927008.18&clientId=70F4C88131804FB6B484FE1C22939426&animation=true' 
+                    alt='Thomas Savasten' 
+                    boxSize='500px'
+                    objectFit='cover' 
+                    borderRadius='full' />
+                    : null
+                    }
+
             </VStack>
         </Box>
     );

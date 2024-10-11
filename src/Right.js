@@ -10,7 +10,8 @@ const Rightside = ({ items }) => {
                         {
                         item === "Website Portfolio" ? 
                         'Special Item: ' + item 
-                        : item}
+                        : item
+                        }
                     </Text>
                 ))
             ) : (

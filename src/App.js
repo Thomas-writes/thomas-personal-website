@@ -45,18 +45,15 @@ function App() {
     };
 
     /*
-    This code is not mine I had to do a lot of research to try and understand it
     scrollPosition is the amount of pixels that has been scrolled
     container height is the height of each container on the right side
     Math.floor rounds it down so Index updates accurately
     */
+    const scrollPosition = rightsideRef.current.scrollTop;
+    const containerHeight = rightsideRef.current.clientHeight;
+    const newIndex = Math.floor(scrollPosition / containerHeight);
     const handleScroll = () => {
         if (isScrolling.current) return;
-
-        const scrollPosition = rightsideRef.current.scrollTop;
-        const containerHeight = rightsideRef.current.clientHeight;
-
-        const newIndex = Math.floor(scrollPosition / containerHeight);
         if (newIndex !== currentHeaderIndex && newIndex < sectionNames.length) {
             setCurrentIndex(newIndex);
         }
@@ -74,7 +71,7 @@ function App() {
                     <Header onSelectSection={onSelectSection} />
                 </Container>
                 <Flex height="80vh">
-                    <Leftside header={sectionNames[currentHeaderIndex]} color={sectionColors[currentHeaderIndex]} />
+                    <Leftside header={sectionNames[currentHeaderIndex]} color={sectionColors[currentHeaderIndex]} index={newIndex} />
                     <RightsideContainer ref={rightsideRef}>
                         {sectionNames.map((section, index) => (
                             <div key={index} ref={el => sectionRefs.current[index] = el} style={{ height: '80vh', padding: '20px', borderBottom: '1px solid #ccc', boxSizing: 'border-box' }}>
