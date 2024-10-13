@@ -12,10 +12,10 @@ import {
 import { Button } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-const Navmenu = ({ onSelectSection }) => {
+const Navmenu = ({ onSelectSection, color }) => {
     return (
         <Menu>
-            <MenuButton as={Button} colorScheme='red' leftIcon={<HamburgerIcon />}>
+            <MenuButton as={Button} bg={color} leftIcon={<HamburgerIcon />}>
                 Sections
             </MenuButton>
             <MenuList>

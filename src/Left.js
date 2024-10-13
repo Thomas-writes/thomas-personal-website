@@ -7,7 +7,7 @@ const Leftside = ({ header, color, index }) => {
                 <Center fontSize="50px">{header} </Center>
                     {
                     index === 0 ? 
-                    <Image src='https://drive.google.com/file/d/1mUXfq5y7vekth0oRV8YV1j17aqJbkTXg/view' 
+                    <Image src='/imgs/1x1 Headshot.jpg'
                     alt='Thomas Savasten' 
                     boxSize='500px'
                     objectFit='cover' 
