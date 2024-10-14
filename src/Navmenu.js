@@ -10,7 +10,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 const Navmenu = ({ onSelectSection, color }) => {
     return (
         <Menu>
-            <MenuButton as={Button} bg={color} leftIcon={<HamburgerIcon />}>
+            <MenuButton w="full" as={Button} bg={color} leftIcon={<HamburgerIcon />}>
                 Sections
             </MenuButton>
             <MenuList>
