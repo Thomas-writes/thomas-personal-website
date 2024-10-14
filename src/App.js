@@ -73,7 +73,7 @@ function App() {
     return (
         <ChakraProvider>
             <div className="App">
-                <Container p={2}>
+                <Container>
                     <Header color={sectionColors[currentHeaderIndex]} onSelectSection={onSelectSection} />
                 </Container>
                 <Flex height="80vh">
