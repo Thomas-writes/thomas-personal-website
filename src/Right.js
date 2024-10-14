@@ -14,24 +14,26 @@ const Rightside = ({ items, color }) => {
                         )}
                         {item === 1 && (
                             <>
-                            <Text fontSize={40} color={color}>
+                            <Text pt='70px' fontSize={40} color={color}>
                                 Personal Website:
                             </Text>
                             <Text>
                                 This website is built with React and uses items from the UI library Chakra UI.
                             </Text>
-                            <Text fontSize={40} color={color}>
+                            <Text pt='50px' fontSize={40} color={color}>
                                 Fitness App:
                             </Text>
                             <Text>
-                                This app was created in Flutter using dart. I am still working on it and plan on finishing it before 2025.
+                                This app was created in Flutter using dart. I am still working on it and have stopped for now. It was not as fun as I imagined it would be.
                             </Text>
                             </>
                         )}
                         {item > 1 && (
+                            <>
                             <Text mb={2}>Hi</Text>
+                            </>
                         )}
-                    </React.Fragment>
+                    </React.Fragment> 
                 ))
             ) : (
                 <Text>No Content Available.</Text>

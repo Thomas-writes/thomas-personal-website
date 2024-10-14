@@ -1,4 +1,4 @@
-import { Box, VStack, Center, Image } from "@chakra-ui/react";
+import { Box, VStack, Center, Image, HStack } from "@chakra-ui/react";
 
 const Leftside = ({ header, color, index }) => {
     return ( 
@@ -12,7 +12,50 @@ const Leftside = ({ header, color, index }) => {
                     boxSize='500px'
                     objectFit='cover' 
                      />
-                    : null
+                    : index === 1 ?
+                    <VStack>
+                        <HStack>
+                            <Image src='/imgs/reactlogo.png'
+                            alt='React' 
+                            boxSize='100px'
+                            mr='50px'
+                            />
+                            <Image 
+                            display='flex'
+                            maxH={20}
+                            src='/imgs/chakrauilogo.png'
+                            alt='Chakra UI' 
+                            objectFit='cover' 
+                            />
+                        </HStack>
+                        <HStack>
+                            <Image 
+                            mt='40px'
+                            display='flex'
+                            maxH='60px'
+                            src='/imgs/flutter logo.png'
+                            alt='Flutter' 
+                            objectFit='cover' 
+                            />
+                            <Image 
+                            mt='40px'
+                            display='flex'
+                            maxH='100px'
+                            src='/imgs/dartlogo.png'
+                            alt='Dart' 
+                            objectFit='cover' 
+                            />
+                        </HStack>
+                    </VStack>
+                    :
+                    <VStack>
+                        <Image 
+                        src='/imgs/linkedinlogo.png'
+                        alt='LinkedIn' 
+                        boxSize='200px'
+                        objectFit='cover' 
+                        />
+                    </VStack>
                     }
 
             </VStack>
