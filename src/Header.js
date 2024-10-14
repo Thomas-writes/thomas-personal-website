@@ -4,7 +4,7 @@ import Navmenu from "./Navmenu";
 const Header = ({onSelectSection, color}) => {
     return (  
         <Box height="20vh" textAlign="center" py={10}>
-            <HStack spacing={'20px'} justify="center">
+            <HStack spacing={'20px'} >
                 <Heading as="h1" fontSize="50px" color={color}>
                     Thomas Savasten
                 </Heading>
