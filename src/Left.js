@@ -11,6 +11,7 @@ const Leftside = ({ header, color, index }) => {
                     alt='Thomas Savasten' 
                     boxSize='500px'
                     objectFit='cover' 
+                    borderRadius='full'
                      />
                     : index === 1 ?
                     <VStack>
@@ -54,6 +55,19 @@ const Leftside = ({ header, color, index }) => {
                         alt='LinkedIn' 
                         boxSize='200px'
                         objectFit='cover' 
+                        />
+                        <Image 
+                        src='/imgs/gmaillogo.svg'
+                        alt='Gmail' 
+                        boxSize='150px'
+                        objectFit='cover' 
+                        />
+                        <Image 
+                        mt='30px'
+                        display='flex'
+                        src='/imgs/phoneicon.png'
+                        alt='Gmail' 
+                        maxH='150px'
                         />
                     </VStack>
                     }
