@@ -9,7 +9,7 @@ const Rightside = ({ items, color }) => {
                     <React.Fragment key={index}>
                         {item === 0 && (
                             <Text mb={2} fontSize='30px'>
-                                Hello, I am a freshman studying computer science and mathematics at KU. I am currently in the clubs ACM and Case Competition Club. I will graduate with my computer science and math degrees by May 2028.
+                                Hello! My name is Thomas, I'm a freshman at KU double majoring in computer science and mathematics. I am an active member in The Association of Computing Machinery and Case Competion Club.
                             </Text>
                         )}
                         {item === 1 && (
